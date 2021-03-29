@@ -12,10 +12,15 @@ namespace ExpenseReport.Data
     {
         [Key]
         public int EmployerId { get; set; }
+        [Required]
         public string FirstName { get; set; }
+        [Required]
         public string LastName { get; set; }
+        [Required]
         public string Email { get; set; }
+        [Required]
         public Department Department { get; set; }
+        [Required]
         public string Title { get; set; }
 
     }

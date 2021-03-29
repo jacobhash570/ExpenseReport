@@ -13,8 +13,11 @@ namespace ExpenseReport.Data
     {
         [Key]
         public int ReportId { get; set; }
+        [Required]
         public MonthOfReport MonthOfReport { get; set; }
-        public int Amount { get; set; }
+
+        //Add to this
+        public int Total { get; set; }
 
         [ForeignKey(nameof(Employee))]
         public int EmployeeId { get; set; }
