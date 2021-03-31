@@ -13,6 +13,7 @@ namespace ExpenseReport.Data
     {
         [Key]
         public int ReportId { get; set; }
+
         [Required]
         public MonthOfReport MonthOfReport { get; set; }
 

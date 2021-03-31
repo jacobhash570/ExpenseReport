@@ -1,27 +1,26 @@
-﻿using System;
+﻿using ExpenseReport.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace ExpenseReport.Data
+namespace ExpenseReport.WebMVC.Models
 {
-    public enum Department { Marketing = 1, Operations, Finance, Sales, HumanResouces, Puchasing, Other }
-    public class Employee
+    public class EmployeeCreate
     {
-        [Key]
-        public int EmployeeId { get; set; }
         [Required]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
         [Required]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
         [Required]
         public string Email { get; set; }
         //[Required]
         //public Department Department { get; set; }
         [Required]
+        [Display(Name = "Job Title")]
         public string Title { get; set; }
-
     }
 }

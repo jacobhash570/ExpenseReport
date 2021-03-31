@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmployeeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExpenseReport.Data\ExpenseReport.Data.csproj">
+      <Project>{5dc12eeb-95c7-4f3a-8045-0e7d3f216451}</Project>
+      <Name>ExpenseReport.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExpenseReport.Models\ExpenseReport.Models.csproj">
+      <Project>{058d5af4-9465-41bb-a891-5ee0545c1bf6}</Project>
+      <Name>ExpenseReport.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

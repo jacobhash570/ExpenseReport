@@ -32,7 +32,7 @@ namespace ExpenseReport.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<Expense> Expenses { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

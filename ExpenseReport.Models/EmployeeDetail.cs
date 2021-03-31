@@ -5,23 +5,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExpenseReport.Data
+namespace ExpenseReport.Models
 {
-    public enum Department { Marketing = 1, Operations, Finance, Sales, HumanResouces, Puchasing, Other }
-    public class Employee
+    public class EmployeeDetail
     {
-        [Key]
         public int EmployeeId { get; set; }
-        [Required]
-        public string FirstName { get; set; }
-        [Required]
-        public string LastName { get; set; }
-        [Required]
-        public string Email { get; set; }
-        //[Required]
-        //public Department Department { get; set; }
-        [Required]
-        public string Title { get; set; }
 
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        public string Email { get; set; }
+
+        //public Department Department { get; set; }
+        [Display(Name = "Job Title")]
+        public string Title { get; set; }
     }
 }
