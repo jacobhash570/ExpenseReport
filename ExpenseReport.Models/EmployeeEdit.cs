@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExpenseReport.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -19,8 +20,8 @@ namespace ExpenseReport.Models
         public string LastName { get; set; }
         [Required]
         public string Email { get; set; }
-        //[Required]
-        //public Department Department { get; set; }
+        [Required]
+        public Department Department { get; set; }
         [Required]
         [Display(Name = "Job Title")]
         public string Title { get; set; }

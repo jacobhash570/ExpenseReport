@@ -57,12 +57,29 @@
     <Compile Include="Employee.cs" />
     <Compile Include="Expense.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202103311459383_InitialCreate.cs" />
+    <Compile Include="Migrations\202103311459383_InitialCreate.Designer.cs">
+      <DependentUpon>202103311459383_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103311938433_addedEmployeeDepartment.cs" />
+    <Compile Include="Migrations\202103311938433_addedEmployeeDepartment.Designer.cs">
+      <DependentUpon>202103311938433_addedEmployeeDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Report.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202103311459383_InitialCreate.resx">
+      <DependentUpon>202103311459383_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103311938433_addedEmployeeDepartment.resx">
+      <DependentUpon>202103311938433_addedEmployeeDepartment.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

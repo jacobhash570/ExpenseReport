@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ExpenseReport.Data
 {
-    public enum Department { Marketing = 1, Operations, Finance, Sales, HumanResouces, Puchasing, Other }
+    public enum Department { Marketing, Operations, Finance, Sales, HumanResouces, Puchasing, Other }
     public class Employee
     {
         [Key]
@@ -18,8 +18,8 @@ namespace ExpenseReport.Data
         public string LastName { get; set; }
         [Required]
         public string Email { get; set; }
-        //[Required]
-        //public Department Department { get; set; }
+        [Required]
+        public Department Department { get; set; }
         [Required]
         public string Title { get; set; }
 

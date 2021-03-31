@@ -17,8 +17,8 @@ namespace ExpenseReport.WebMVC.Models
         public string LastName { get; set; }
         [Required]
         public string Email { get; set; }
-        //[Required]
-        //public Department Department { get; set; }
+        [Required]
+        public Department Department { get; set; }
         [Required]
         [Display(Name = "Job Title")]
         public string Title { get; set; }

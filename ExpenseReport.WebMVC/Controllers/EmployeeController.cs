@@ -55,6 +55,7 @@ namespace ExpenseReport.WebMVC.Controllers
                 FirstName = employee.FirstName,
                 LastName = employee.LastName,
                 Email = employee.Email,
+                Department = employee.Department,
                 Title = employee.Title
             });
         }
