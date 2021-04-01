@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,5 +23,8 @@ namespace ExpenseReport.Data
         public decimal Amount { get; set; }
         [Required]
         public string Location { get; set; }
+        [ForeignKey(nameof(Report))]
+        public int ReportId { get; set; }
+        public virtual Report Report{ get; set; }
     }
 }

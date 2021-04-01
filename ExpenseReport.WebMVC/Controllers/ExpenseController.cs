@@ -55,7 +55,8 @@ namespace ExpenseReport.WebMVC.Controllers
                 Description = expense.Description,
                 Amount = expense.Amount,
                 Location = expense.Location,
-                Category = expense.Category
+                Category = expense.Category,
+                ReportId = expense.ReportId,
             });
         }
 

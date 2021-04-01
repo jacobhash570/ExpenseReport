@@ -63,6 +63,11 @@
     <Compile Include="ExpenseEdit.cs" />
     <Compile Include="ExpenseListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportCreate.cs" />
+    <Compile Include="ReportDetail.cs" />
+    <Compile Include="ReportEdit.cs" />
+    <Compile Include="ReportListItem.cs" />
+    <Compile Include="ReportRunningTotal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

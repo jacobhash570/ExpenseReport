@@ -27,5 +27,6 @@ namespace ExpenseReport.Models
 
         [Display(Name = "Location of Expense")]
         public string Location { get; set; }
+        public int ReportId { get; set; }
     }
 }

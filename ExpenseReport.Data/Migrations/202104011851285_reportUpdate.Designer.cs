@@ -7,13 +7,13 @@ namespace ExpenseReport.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class addedEmployeeDepartment : IMigrationMetadata
+    public sealed partial class reportUpdate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addedEmployeeDepartment));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(reportUpdate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202103311938433_addedEmployeeDepartment"; }
+            get { return "202104011851285_reportUpdate"; }
         }
         
         string IMigrationMetadata.Source

@@ -13,7 +13,7 @@ namespace ExpenseReport.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202103311459383_InitialCreate"; }
+            get { return "202104011832172_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

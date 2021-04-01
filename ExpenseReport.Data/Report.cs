@@ -21,11 +21,9 @@ namespace ExpenseReport.Data
         public decimal Total { get; set; }
 
         [ForeignKey(nameof(Employee))]
+        [Required]
         public int EmployeeId { get; set; }
         public virtual Employee Employee { get; set; }
-
-        [ForeignKey(nameof(Expense))]
-        public int ExpenseId { get; set; }
-        public virtual Expense Expense { get; set; }
+        public virtual ICollection<Expense> Expenses { get; set; } = new List<Expense>();
     }
 }

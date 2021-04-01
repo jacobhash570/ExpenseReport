@@ -29,7 +29,8 @@ namespace ExpenseReport.Services
                     Description = expense.Description,
                     Amount = expense.Amount,
                     Location = expense.Location,
-                    Category = expense.Category
+                    Category = expense.Category,
+                    ReportId = expense.ReportId
                 };
             }
         }
@@ -44,7 +45,8 @@ namespace ExpenseReport.Services
                     Description = model.Description,
                     Amount = model.Amount,
                     Location = model.Location,
-                    Category = model.Category
+                    Category = model.Category,
+                    ReportId = model.ReportId,
                 };
                 ctx.Expenses.Add(newExpense);
                 return ctx.SaveChanges() == 1;
@@ -61,7 +63,8 @@ namespace ExpenseReport.Services
                     Description = e.Description,
                     Amount = e.Amount,
                     Location = e.Location,
-                    Category = e.Category
+                    Category = e.Category,
+                    ReportId = e.ReportId
                 });
                 return query.ToArray();
             }
@@ -77,6 +80,7 @@ namespace ExpenseReport.Services
                 expense.Amount = model.Amount;
                 expense.Location = model.Location;
                 expense.Category = model.Category;
+                expense.ReportId = model.ReportId;
 
                 return ctx.SaveChanges() == 1;
             }

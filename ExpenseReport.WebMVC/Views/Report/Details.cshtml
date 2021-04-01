@@ -1,0 +1,49 @@
+﻿@model ExpenseReport.Models.ReportDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ReportDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReportId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MonthOfReport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MonthOfReport)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeId)
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.ReportId}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
