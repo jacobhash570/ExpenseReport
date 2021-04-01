@@ -33,6 +33,7 @@ namespace ExpenseReport.Data
         }
 
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Expense> Expenses { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

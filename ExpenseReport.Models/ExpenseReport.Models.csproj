@@ -58,6 +58,10 @@
     <Compile Include="EmployeeDetail.cs" />
     <Compile Include="EmployeeEdit.cs" />
     <Compile Include="EmployeeListItem.cs" />
+    <Compile Include="ExpenseCreate.cs" />
+    <Compile Include="ExpenseDetail.cs" />
+    <Compile Include="ExpenseEdit.cs" />
+    <Compile Include="ExpenseListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

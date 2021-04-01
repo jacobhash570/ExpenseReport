@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Company.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Expense.cs" />
     <Compile Include="IdentityModels.cs" />
@@ -64,6 +65,10 @@
     <Compile Include="Migrations\202103311938433_addedEmployeeDepartment.cs" />
     <Compile Include="Migrations\202103311938433_addedEmployeeDepartment.Designer.cs">
       <DependentUpon>202103311938433_addedEmployeeDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104011439267_expenseAdded.cs" />
+    <Compile Include="Migrations\202104011439267_expenseAdded.Designer.cs">
+      <DependentUpon>202104011439267_expenseAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103311938433_addedEmployeeDepartment.resx">
       <DependentUpon>202103311938433_addedEmployeeDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104011439267_expenseAdded.resx">
+      <DependentUpon>202104011439267_expenseAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -18,7 +18,7 @@ namespace ExpenseReport.Data
         public MonthOfReport MonthOfReport { get; set; }
 
         //Add to this
-        public int Total { get; set; }
+        public decimal Total { get; set; }
 
         [ForeignKey(nameof(Employee))]
         public int EmployeeId { get; set; }
