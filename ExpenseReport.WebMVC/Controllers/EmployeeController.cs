@@ -83,8 +83,8 @@ namespace ExpenseReport.WebMVC.Controllers
 
         private EmployeeService CreateEmployeeService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new EmployeeService(userId);
+            //var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new EmployeeService(/*userId*/);
             return service;
         }
     }

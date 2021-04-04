@@ -35,6 +35,14 @@ namespace ExpenseReport.Services
             }
         }
 
+        public IEnumerable<Expense> GetExpenses()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Expenses.ToList();
+            }
+        }
+
         public bool CreateExpense(ExpenseCreate model)
         {
             using (var ctx = new ApplicationDbContext())

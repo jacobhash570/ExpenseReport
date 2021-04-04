@@ -11,12 +11,12 @@ namespace ExpenseReport.Services
 {
     public class EmployeeService
     {
-        private readonly Guid _userId;
+        /*private readonly Guid _userId;
 
         public EmployeeService(Guid userId)
         {
             _userId = userId;
-        }
+        }*/
 
         public EmployeeDetail GetEmployeeDetailsById(int id)
         {
@@ -34,6 +34,7 @@ namespace ExpenseReport.Services
                 };
             }
         }
+
 
         public bool CreateEmployee(EmployeeCreate model)
         {
@@ -65,6 +66,14 @@ namespace ExpenseReport.Services
                     Title = e.Title
                 });
                 return query.ToArray();
+            }
+        }
+
+        public IEnumerable<Employee> GetEmployees()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Employees.ToList();
             }
         }
 

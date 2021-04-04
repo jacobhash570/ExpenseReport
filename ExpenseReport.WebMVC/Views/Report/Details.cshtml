@@ -25,13 +25,7 @@
         <dd>
             @Html.DisplayFor(model => model.Total)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.MonthOfReport)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.MonthOfReport)
-        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.EmployeeId)
         </dt>
@@ -40,10 +34,9 @@
             @Html.DisplayFor(model => model.EmployeeId)
         </dd>
 
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.ReportId}) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReportId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

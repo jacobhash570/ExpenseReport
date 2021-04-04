@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ExpenseReport.Models
 {
-    public class ReportRunningTotal
+    public class ReportTotal
     {
-        public int ExpenseId { get; set; }
         public int ReportId { get; set; }
-        public decimal RunningTotal { get; set; }
+        public decimal Amount { get; set; }
+        //public string Text { get; set; }
     }
 }

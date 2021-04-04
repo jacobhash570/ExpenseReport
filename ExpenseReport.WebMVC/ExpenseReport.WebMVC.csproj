@@ -247,8 +247,8 @@
     <Content Include="Views\Expense\Edit.cshtml" />
     <Content Include="Views\Report\Index.cshtml" />
     <Content Include="Views\Report\Create.cshtml" />
-    <Content Include="Views\Report\Details.cshtml" />
     <Content Include="Views\Report\Edit.cshtml" />
+    <Content Include="Views\Report\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

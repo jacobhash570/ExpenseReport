@@ -10,12 +10,12 @@ namespace ExpenseReport.Services
 {
     public class ReportService
     {
-        private readonly Guid _userId;
+        /*private readonly Guid _userId;
 
         public ReportService(Guid userId)
         {
             _userId = userId;
-        }
+        }*/
 
         public ReportDetail GetReportDetailsById(int id)
         {
@@ -24,7 +24,7 @@ namespace ExpenseReport.Services
                 var report = ctx.Reports.Single(e => e.ReportId == id);
                 return new ReportDetail
                 {
-                    ReportId= report.ReportId,
+                    ReportId = report.ReportId,
                     MonthOfReport = report.MonthOfReport,
                     Total = report.Total,
                     EmployeeId = report.EmployeeId
@@ -61,6 +61,14 @@ namespace ExpenseReport.Services
             }
         }
 
+        public IEnumerable<Report> GetReports()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Reports.ToList();
+            }
+        }
+
         public bool UpdateReport(ReportEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -73,5 +81,32 @@ namespace ExpenseReport.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public ReportTotal GetReportTotal(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = (from r in ctx.Expenses
+                             where r.ReportId.Equals(id)
+                             select r.Amount).Sum();
+                return new ReportTotal
+                {
+                    Amount = query
+                };
+            }
+        }
+
+        /*public ReportTotal GetReportById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var report = ctx.Reports.Single(e => e.ReportId == id);
+                return new ReportTotal
+                {
+                    //ReportId = report.ReportId,
+                    //Amount = report.Total;
+                };
+            }
+        }*/
     }
 }

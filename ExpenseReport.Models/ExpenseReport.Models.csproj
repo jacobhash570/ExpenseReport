@@ -67,7 +67,7 @@
     <Compile Include="ReportDetail.cs" />
     <Compile Include="ReportEdit.cs" />
     <Compile Include="ReportListItem.cs" />
-    <Compile Include="ReportRunningTotal.cs" />
+    <Compile Include="ReportTotal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

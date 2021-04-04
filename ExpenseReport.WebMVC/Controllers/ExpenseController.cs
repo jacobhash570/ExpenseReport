@@ -1,4 +1,5 @@
-﻿using ExpenseReport.Models;
+﻿using ExpenseReport.Data;
+using ExpenseReport.Models;
 using ExpenseReport.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -20,6 +21,16 @@ namespace ExpenseReport.WebMVC.Controllers
         public ActionResult Create()
         {
             ViewBag.Title = "New Expense";
+            List<Report> Reports = new ReportService().GetReports().ToList();
+            var query = from r in Reports
+                        select new SelectListItem()
+                        {
+                            Value = r.ReportId.ToString(),
+                            Text = r.ReportId.ToString(),
+                        };
+
+            ViewBag.ReportId = query.ToList();
+
             return View();
         }
 
@@ -47,6 +58,16 @@ namespace ExpenseReport.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
+            List<Report> Reports = new ReportService().GetReports().ToList();
+            var query = from r in Reports
+                        select new SelectListItem()
+                        {
+                            Value = r.ReportId.ToString(),
+                            Text = r.ReportId.ToString(),
+                        };
+
+            ViewBag.ReportId = query.ToList();
+
             var expense = CreateExpenseService().GetExpenseDetailsById(id);
             return View(new ExpenseEdit
             {
