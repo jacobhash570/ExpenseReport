@@ -22,5 +22,6 @@ namespace ExpenseReport.WebMVC.Models
         [Required]
         [Display(Name = "Job Title")]
         public string Title { get; set; }
+        public int CompanyId { get; set; }
     }
 }

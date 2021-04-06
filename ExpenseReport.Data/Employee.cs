@@ -23,6 +23,11 @@ namespace ExpenseReport.Data
         public Department Department { get; set; }
         [Required]
         public string Title { get; set; }
+
+        [ForeignKey(nameof(Company))]
+        public int CompanyId { get; set; }
+        public virtual Company Company { get; set; }
+
         public virtual ICollection<Report> Reports { get; set; } = new List<Report>();
     }
 }

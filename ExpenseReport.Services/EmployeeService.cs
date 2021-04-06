@@ -30,7 +30,8 @@ namespace ExpenseReport.Services
                     LastName = employee.LastName,
                     Email = employee.Email,
                     Department = employee.Department,
-                    Title = employee.Title
+                    Title = employee.Title,
+                    CompanyId = employee.CompanyId,
                 };
             }
         }
@@ -46,7 +47,8 @@ namespace ExpenseReport.Services
                     LastName = model.LastName,
                     Email = model.Email,
                     Department = model.Department,
-                    Title = model.Title
+                    Title = model.Title,
+                    CompanyId = model.CompanyId
                 };
                 ctx.Employees.Add(newEmployee);
                 return ctx.SaveChanges() == 1;
@@ -63,7 +65,8 @@ namespace ExpenseReport.Services
                     LastName = e.LastName,
                     Email = e.Email,
                     Department = e.Department,
-                    Title = e.Title
+                    Title = e.Title,
+                    CompanyId = e.CompanyId
                 });
                 return query.ToArray();
             }
@@ -87,6 +90,7 @@ namespace ExpenseReport.Services
                 employee.Email = model.Email;
                 employee.Department = model.Department;
                 employee.Title = model.Title;
+                employee.CompanyId = model.CompanyId;
 
                 return ctx.SaveChanges() == 1;
             }

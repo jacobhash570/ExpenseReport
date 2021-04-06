@@ -1,4 +1,5 @@
-﻿using ExpenseReport.Models;
+﻿using ExpenseReport.Data;
+using ExpenseReport.Models;
 using ExpenseReport.Services;
 using ExpenseReport.WebMVC.Models;
 using Microsoft.AspNet.Identity;
@@ -21,6 +22,16 @@ namespace ExpenseReport.WebMVC.Controllers
         public ActionResult Create()
         {
             ViewBag.Title = "New Employee";
+
+            List<Company> Companies = new CompanyServices().GetCompanies().ToList();
+            var query = from e in Companies
+                        select new SelectListItem()
+                        {
+                            Value = e.CompanyId.ToString(),
+                            Text = e.Name.ToString(),
+                        };
+
+            ViewBag.CompanyId = query.ToList();
             return View();
         }
 
@@ -48,6 +59,16 @@ namespace ExpenseReport.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
+            List<Company> Companies = new CompanyServices().GetCompanies().ToList();
+            var query = from e in Companies
+                        select new SelectListItem()
+                        {
+                            Value = e.CompanyId.ToString(),
+                            Text = e.Name.ToString(),
+                        };
+
+            ViewBag.CompanyId = query.ToList();
+
             var employee = CreateEmployeeService().GetEmployeeDetailsById(id);
             return View(new EmployeeEdit
             {
@@ -56,7 +77,8 @@ namespace ExpenseReport.WebMVC.Controllers
                 LastName = employee.LastName,
                 Email = employee.Email,
                 Department = employee.Department,
-                Title = employee.Title
+                Title = employee.Title,
+                CompanyId = employee.CompanyId
             });
         }
 

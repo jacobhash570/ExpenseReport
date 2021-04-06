@@ -22,5 +22,6 @@ namespace ExpenseReport.Models
         public Department Department { get; set; }
         [Display(Name = "Job Title")]
         public string Title { get; set; }
+        public int CompanyId { get; set; }
     }
 }

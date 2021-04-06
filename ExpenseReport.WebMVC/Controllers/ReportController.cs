@@ -93,8 +93,7 @@ namespace ExpenseReport.WebMVC.Controllers
                 MonthOfReport = report.MonthOfReport,
                 EmployeeId = report.EmployeeId,
                 Total = total.Amount,
-            }
-                ) ;
+            });
         }
 
 

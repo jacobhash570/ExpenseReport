@@ -25,5 +25,7 @@ namespace ExpenseReport.Data
         public int EmployeeId { get; set; }
         public virtual Employee Employee { get; set; }
         public virtual ICollection<Expense> Expenses { get; set; } = new List<Expense>();
+        public virtual ICollection<Company> Company { get; set; } = new List<Company>();
+
     }
 }
