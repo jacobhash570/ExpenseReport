@@ -13,10 +13,6 @@ namespace ExpenseReport.Models
         [Required]
         [Display(Name = "Report Month")]
         public MonthOfReport MonthOfReport { get; set; }
-
-        [Display(Name = "Report Total")]
-        //Add to this
-        public decimal Total { get; set; }
         public int EmployeeId { get; set; }
 
     }
