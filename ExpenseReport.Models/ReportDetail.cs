@@ -10,6 +10,7 @@ namespace ExpenseReport.Models
 {
     public class ReportDetail
     {
+        [Display(Name = "Identification Number")]
         public int ReportId { get; set; }
         [Required]
         [Display(Name = "Report Month")]
@@ -19,5 +20,7 @@ namespace ExpenseReport.Models
         //Add to this
         public decimal Total { get; set; }
         public int EmployeeId { get; set; }
+        //public IEnumerable<Expense> Expenses { get; set; }
+
     }
 }

@@ -26,7 +26,7 @@ namespace ExpenseReport.Services
                 {
                     ReportId = report.ReportId,
                     MonthOfReport = report.MonthOfReport,
-                    Total = report.Total,
+                    //Total = report.Total,
                     EmployeeId = report.EmployeeId
                 };
             }
@@ -39,7 +39,7 @@ namespace ExpenseReport.Services
                 var newReport = new Report()
                 {
                     MonthOfReport = model.MonthOfReport,
-                    Total = model.Total,
+                    //Total = model.Total,
                     EmployeeId = model.EmployeeId
                 };
                 ctx.Reports.Add(newReport);
@@ -54,7 +54,7 @@ namespace ExpenseReport.Services
                 {
                     ReportId = e.ReportId,
                     MonthOfReport = e.MonthOfReport,
-                    Total = e.Total,
+                    //Total = e.Total,
                     EmployeeId = e.EmployeeId
                 });
                 return query.ToArray();
@@ -69,13 +69,25 @@ namespace ExpenseReport.Services
             }
         }
 
+        public IEnumerable<Expense> GetExpenseItemized(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = (from r in ctx.Expenses
+                             where r.ReportId.Equals(id)
+                             select r).ToList();
+                return query;
+            };
+        }
+
+
         public bool UpdateReport(ReportEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var report = ctx.Reports.Single(e => e.ReportId == model.ReportId);
                 report.MonthOfReport = model.MonthOfReport;
-                report.Total = model.Total;
+                //report.Total = model.Total;
                 report.EmployeeId = model.EmployeeId;
 
                 return ctx.SaveChanges() == 1;

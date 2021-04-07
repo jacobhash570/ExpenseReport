@@ -49,38 +49,22 @@ namespace ExpenseReport.WebMVC.Controllers
             return View(model);
         }
 
-        /*public ActionResult ReportTotal(int id)
+        public ActionResult ExpensesItemized(int id)
         {
-            ReportTotal reportId = new ReportService().GetReportTotal(id);           
-            var report = total
-            {
-                //ReportId = total.ReportId.ToString(),
-                //Text = e.ReportId.ToString(),
-                //Amount = total.Amount,
-            };
-
-           ViewBag.Total;
-            return View(reportId);
-
-            decial Report = new ReportService().GetReportById(id);
-            var query = from r in Report
-                        select new SelectListItem()
+            List<Expense> expenses = new ReportService().GetExpenseItemized(id).ToList();
+            var query = from e in expenses
+                        select new ExpenseListItem
                         {
-                            Value = e.EmployeeId.ToString(),
-                            Text = e.EmployeeId.ToString(),
+                            ExpenseId = e.ExpenseId,
+                            DateOfExpense = e.DateofExpense,
+                            Amount = e.Amount,
+                            Category = e.Category,
+                            Description = e.Description,
+                            Location = e.Location,
+                            ReportId = e.ReportId,                
                         };
-
-            ViewBag.EmployeeId = query.ToList();
-
-            var report = CreateReportService().GetReportDetailsById(id);
-            return View(new ReportEdit
-            {
-                ReportId = report.ReportId,
-                MonthOfReport = report.MonthOfReport,
-                Total = report.Total,
-                EmployeeId = report.EmployeeId
-            });
-        }*/
+            return View(query);
+        }
 
         public ActionResult Details(int id)
         {

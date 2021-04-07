@@ -15,9 +15,6 @@
             @Html.DisplayNameFor(model => model.ReportId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Total)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.MonthOfReport)
         </th>
         <th>
@@ -32,9 +29,6 @@
         @Html.DisplayFor(modelItem => item.ReportId)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Total)
-    </td>
-    <td>
         @Html.DisplayFor(modelItem => item.MonthOfReport)
     </td>
     <td>
@@ -42,7 +36,7 @@
     </td>
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.ReportId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.ReportId }) |
+        @Html.ActionLink("Itemized List", "ExpensesItemized", new { id = item.ReportId }) |
         @Html.ActionLink("Delete", "Delete", new { id = item.ReportId })
     </td>
 </tr>
