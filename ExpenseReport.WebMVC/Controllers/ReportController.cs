@@ -20,7 +20,6 @@ namespace ExpenseReport.WebMVC.Controllers
         {
             ViewBag.Title = "New Report";
 
-
             List<Employee> Employees = new EmployeeService().GetEmployees().ToList();
             var query = from e in Employees
                         select new SelectListItem()
@@ -38,7 +37,6 @@ namespace ExpenseReport.WebMVC.Controllers
         public ActionResult Create(ReportCreate model)
         {
             if (!ModelState.IsValid) return View(model);
-
             if (CreateReportService().CreateReport(model))
             {
                 TempData["SaveResult"] = "Report Added";
