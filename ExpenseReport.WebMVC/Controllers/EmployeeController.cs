@@ -102,7 +102,26 @@ namespace ExpenseReport.WebMVC.Controllers
             ModelState.AddModelError("", "An error occured, could not update employee.");
             return View(model);
         }
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateEmployeeService();
+            var model = svc.GetEmployeeDetailsById(id);
+            return View(model);
+        }
 
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteEmployee(int id)
+        {
+            var service = CreateEmployeeService();
+
+            service.DeleteEmployee(id);
+
+            TempData["SaveResult"] = "Your employee was removed";
+
+            return RedirectToAction("Index");
+        }
         private EmployeeService CreateEmployeeService()
         {
             //var userId = Guid.Parse(User.Identity.GetUserId());

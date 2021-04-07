@@ -1,5 +1,7 @@
-﻿using ExpenseReport.Models;
+﻿using ExpenseReport.Data;
+using ExpenseReport.Models;
 using ExpenseReport.Services;
+using ExpenseReport.WebMVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +45,24 @@ namespace ExpenseReport.WebMVC.Controllers
             return View(company);
         }
 
+        public ActionResult EmployeeListByCompany(int id)
+        {
+            List<Employee> employees = new CompanyServices().GetEmployeesByCompany(id).ToList();
+            var query = from e in employees
+                        select new EmployeeListItem
+                        {
+                            CompanyId = e.CompanyId,
+                            Department = e.Department,
+                            Title = e.Title,
+                            FirstName = e.FirstName,
+                            LastName = e.LastName,
+                            Email = e.Email,
+                            EmployeeId = e.EmployeeId,                         
+
+                        };
+            return View(query);
+        }
+
         public ActionResult Edit(int id)
         {
             var company = CreateCompanyService().GetCompanyDetailsById(id);
@@ -75,6 +95,28 @@ namespace ExpenseReport.WebMVC.Controllers
             ModelState.AddModelError("", "An error occured, could not update company.");
             return View(model);
         }
+
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateCompanyService();
+            var model = svc.GetCompanyDetailsById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteCompany(int id)
+        {
+            var service = CreateCompanyService();
+
+            service.DeleteCompany(id);
+
+            TempData["SaveResult"] = "Your company was removed";
+
+            return RedirectToAction("Index");
+        }
+
 
         private CompanyServices CreateCompanyService()
         {

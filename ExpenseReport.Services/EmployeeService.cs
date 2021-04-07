@@ -95,6 +95,21 @@ namespace ExpenseReport.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteEmployee(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Employees
+                        .Single(e => e.EmployeeId == id /*&& e.OwnerId == _userId*/);
+
+                ctx.Employees.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
 

@@ -25,7 +25,6 @@ namespace ExpenseReport.Services
             }
         }
 
-
         public bool CreateCompany(CompanyCreate model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -63,6 +62,17 @@ namespace ExpenseReport.Services
             }
         }
 
+        public IEnumerable<Employee> GetEmployeesByCompany(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = (from r in ctx.Employees
+                             where r.CompanyId.Equals(id)
+                             select r).ToList();
+                return query;
+            };
+        }
+
         public bool UpdateCompany(CompanyEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -71,6 +81,22 @@ namespace ExpenseReport.Services
                 company.Address = model.Address;
                 company.Name = model.Name;
                 company.Industry = model.Industry;
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+
+        public bool DeleteCompany(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Companies
+                        .Single(e => e.CompanyId == id /*&& e.OwnerId == _userId*/);
+
+                ctx.Companies.Remove(entity);
+
                 return ctx.SaveChanges() == 1;
             }
         }

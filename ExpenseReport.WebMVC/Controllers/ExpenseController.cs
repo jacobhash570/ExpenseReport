@@ -101,6 +101,26 @@ namespace ExpenseReport.WebMVC.Controllers
             ModelState.AddModelError("", "An error occured, could not update expense.");
             return View(model);
         }
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateExpenseService();
+            var model = svc.GetExpenseDetailsById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteExpense(int id)
+        {
+            var service = CreateExpenseService();
+
+            service.DeleteExpense(id);
+
+            TempData["SaveResult"] = "Your expense was removed";
+
+            return RedirectToAction("Index");
+        }
 
         private ExpenseService CreateExpenseService()
         {

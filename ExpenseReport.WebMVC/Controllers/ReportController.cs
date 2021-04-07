@@ -124,6 +124,27 @@ namespace ExpenseReport.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateReportService();
+            var model = svc.GetReportDetailsById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteReport(int id)
+        {
+            var service = CreateReportService();
+
+            service.DeleteReport(id);
+
+            TempData["SaveResult"] = "Your report was removed";
+
+            return RedirectToAction("Index");
+        }
+
         private ReportService CreateReportService()
         {
             //var userId = Guid.Parse(User.Identity.GetUserId());

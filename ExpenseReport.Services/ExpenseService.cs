@@ -93,5 +93,20 @@ namespace ExpenseReport.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteExpense(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Expenses
+                        .Single(e => e.ExpenseId == id /*&& e.OwnerId == _userId*/);
+
+                ctx.Expenses.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

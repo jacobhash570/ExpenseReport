@@ -108,7 +108,7 @@ namespace ExpenseReport.Services
             }
         }
 
-        /*public ReportTotal GetReportById(int id)
+        public ReportTotal GetReportById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -119,6 +119,21 @@ namespace ExpenseReport.Services
                     //Amount = report.Total;
                 };
             }
-        }*/
+        }
+
+        public bool DeleteReport(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Reports
+                        .Single(e => e.ReportId == id /*&& e.OwnerId == _userId*/);
+
+                ctx.Reports.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
