@@ -26,7 +26,7 @@ namespace ExpenseReport.Services
                 {
                     ReportId = report.ReportId,
                     MonthOfReport = report.MonthOfReport,
-                    //Total = report.Total,
+                    Total = report.Total,
                     EmployeeId = report.EmployeeId
                 };
             }

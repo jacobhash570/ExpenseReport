@@ -19,7 +19,7 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.EmployeeId)
-        </th>
+
         <th></th>
     </tr>
 
@@ -37,6 +37,7 @@
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.ReportId }) |
         @Html.ActionLink("Itemized List", "ExpensesItemized", new { id = item.ReportId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ReportId }) |
         @Html.ActionLink("Delete", "Delete", new { id = item.ReportId })
     </td>
 </tr>

@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-bordered table-responsive table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ExpenseId)
@@ -54,11 +54,16 @@
                 @Html.DisplayFor(modelItem => item.ReportId)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ReportId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ExpenseId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ReportId })
+                @Html.ActionLink("Details", "Details", "Expense", new { id = item.ExpenseId }, null) |
+                @Html.ActionLink("Edit", "Edit", "Expense", new { id = item.ExpenseId }, null) |
+                @Html.ActionLink("Delete", "Delete", "Expense", new { id = item.ExpenseId }, null)
             </td>
         </tr>
     }
-
+    <tfoot>
+        <tr>
+            <td>Total</td>
+            <td>@Model.Sum(i => i.Amount)</td>
+        </tr>
+    </tfoot>
 </table>

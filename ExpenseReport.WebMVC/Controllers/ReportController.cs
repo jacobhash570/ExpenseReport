@@ -16,6 +16,7 @@ namespace ExpenseReport.WebMVC.Controllers
         {
             return View(CreateReportService().GetReportList());
         }
+
         public ActionResult Create()
         {
             ViewBag.Title = "New Report";
@@ -59,7 +60,7 @@ namespace ExpenseReport.WebMVC.Controllers
                             Category = e.Category,
                             Description = e.Description,
                             Location = e.Location,
-                            ReportId = e.ReportId,                
+                            ReportId = e.ReportId,
                         };
             return View(query);
         }
