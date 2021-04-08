@@ -26,7 +26,7 @@ namespace ExpenseReport.WebMVC.Controllers
                         select new SelectListItem()
                         {
                             Value = e.EmployeeId.ToString(),
-                            Text = e.EmployeeId.ToString(),
+                            Text = e.FullName.ToString(),
                         };
 
             ViewBag.EmployeeId = query.ToList();
@@ -87,7 +87,7 @@ namespace ExpenseReport.WebMVC.Controllers
                         select new SelectListItem()
                         {
                             Value = e.EmployeeId.ToString(),
-                            Text = e.EmployeeId.ToString(),
+                            Text = e.FullName.ToString(),
                         };
 
             ViewBag.EmployeeId = query.ToList();

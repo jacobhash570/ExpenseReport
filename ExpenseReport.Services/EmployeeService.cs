@@ -28,6 +28,7 @@ namespace ExpenseReport.Services
                     EmployeeId = employee.EmployeeId,
                     FirstName = employee.FirstName,
                     LastName = employee.LastName,
+                    FullName = employee.FullName,
                     Email = employee.Email,
                     Department = employee.Department,
                     Title = employee.Title,
