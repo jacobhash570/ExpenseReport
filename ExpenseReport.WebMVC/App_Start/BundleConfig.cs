@@ -24,6 +24,7 @@ namespace ExpenseReport.WebMVC
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-yeti.css",
+                      "~/Content/font-awesome.css",
                       "~/Content/Site.css"));
         }
     }
