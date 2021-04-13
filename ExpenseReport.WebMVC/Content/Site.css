@@ -22,3 +22,21 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.jumbotron {
+    background-image: url(/img/business-budget-chart-eyeglasses-laptop-with-spiral-notepad-pen-against-blue-background.jpg);
+    background-size: cover;
+    height: 100%;
+    padding-top: 5rem;
+    margin-top: 10rem;
+}
+
+.navbar {
+    height: 5rem;
+    align-content: space-evenly;
+}
+
+.lead{
+    width: 70rem;
+}
+
