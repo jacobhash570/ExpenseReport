@@ -43,7 +43,7 @@ This expense report keeping app is meant to allow users to keep a running ledger
 - ReportId ForiegnKey
 
 ### table Report
-- ReporttId int
+- ReportId int
 - MonthOfReport enum
 - Total decimal
 - EmployeeId ForiegnKey
