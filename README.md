@@ -3,7 +3,7 @@
 Developer: Jacob Hash
 - Note: This is the first iteration of this application and lacks some fuctionality.
 
-## Table of Contents
+# Table of Contents
 - Mission Statement
 - Database
 - Features
@@ -42,7 +42,7 @@ This expense report keeping app is meant to allow users to keep a running ledger
 - Location string
 - ReportId ForiegnKey
 
-### table Report
+#### table Report
 - ReportId int
 - MonthOfReport enum
 - Total decimal
