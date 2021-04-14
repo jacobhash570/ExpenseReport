@@ -1,7 +1,7 @@
 # ExpenseTrak
 --- 
 Developer: Jacob Hash
--ExpenseTrak is a .NET Framework MVC 5 Web Application using n-tier architecture.
+- ExpenseTrak is a .NET Framework MVC 5 Web Application using n-tier architecture.
 - Note: This is the first iteration of this application and lacks some fuctionality. The next iteration will allow a company to register and employees to register under that company. 
 
 # Table of Contents
