@@ -34,7 +34,7 @@ This expense report keeping app is meant to allow users to keep a running ledger
 - CompanyId ForiegnKey
 - Reports virtualLisReports
 
-#### table Expenses
+#### table Expense
 - ExpenseId int
 - Category enum
 - DateOfExpense DateTime
