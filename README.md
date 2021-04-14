@@ -2,6 +2,7 @@
 # ExpenseTrak
 --- 
 Developer: Jacob Hash
+- Note: This is the first iteration of this application and lacks some fuctionality.
 
 ## Table of Contents
 - Mission Statement
@@ -51,8 +52,9 @@ This expense report keeping app is meant to allow users to keep a running ledger
 - Compnay virtualLisCompanies
  
 # Features
-...
+---
 #### Create a Company, Employee, Report, and Expense
+- Allow for preaccounting expensing
 
 # Links
 
