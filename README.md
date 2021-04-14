@@ -1,4 +1,3 @@
-# ExpenseReport
 # ExpenseTrak
 --- 
 Developer: Jacob Hash
