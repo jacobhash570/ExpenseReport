@@ -12,7 +12,7 @@ Developer: Jacob Hash
 
 # Mission Statement
 ---
-This expense report keeping app is meant to allow users to keep a running ledger of their expenses throughout the month giving a company a better way of keeping records. I decided on this application because it is a business application. 
+This expense report keeping app is meant to allow users to keep a running ledger of their expenses throughout the month giving a company a better way of keeping records. Enabling for a smooth process when it comes to validating expenses for business-related purchases and reimbursement of those expenses.
 
 
 # Database
